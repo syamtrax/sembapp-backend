@@ -1,0 +1,36 @@
+import User from "../models/userModel.js";
+import jwt from "jsonwebtoken";
+
+export const refreshToken = async (req, res) => {
+  try {
+    const refreshToken = req.cookies.refreshToken;
+    console.log("Cookies: ", req.cookies);
+    if (!refreshToken) return res.sendStatus(401);
+    const user = await User.findAll({
+      where: {
+        refresh_token: refreshToken,
+      },
+    });
+    if (!user[0]) return res.sendStatus(403);
+    jwt.verify(
+      refreshToken,
+      process.env.REFRESH_TOKEN_SECRET,
+      (err, decoded) => {
+        if (err) return res.sendStatus(403);
+        const userId = user[0].id;
+        const namaPengguna = user[0].namaPengguna;
+        const namaToko = user[0].namaToko;
+        const accessToken = jwt.sign(
+          { userId, namaPengguna, namaToko },
+          process.env.ACCESS_TOKEN_SECRET,
+          {
+            expiresIn: "15s",
+          }
+        );
+        res.json({ accessToken });
+      }
+    );
+  } catch (error) {
+    console.log(error);
+  }
+};

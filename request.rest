@@ -1,0 +1,81 @@
+GET http://localhost:5000/transaction
+###
+GET http://localhost:5000/transaction/1
+
+###
+GET http://localhost:5000/dokumen
+
+###
+POST http://localhost:5000/transaction
+Content-Type: application/json
+
+{
+    "label" : "Berhasil",
+    "idtrans" : "IDTrans04_24102022",
+    "paymenttype" : "QRIS",
+    "price" : 10000,
+    "date" : "2022-10-24",
+    "member" : "Member",
+    "namaPengguna" : "ryannoviano"
+
+}
+
+###
+PATCH http://localhost:5000/transaction/1
+Content-Type: application/json
+
+{
+    "label" : "Berhasil",
+    "idtrans" : "IDTrans01_23102022",
+    "paymenttype" : "Cash",
+    "price" : 100000,
+    "date" : "2022-10-23",
+    "member" : "Non-Member"
+    
+}
+
+###
+DELETE http://localhost:5000/transaction/5
+
+###
+GET http://localhost:5000/total
+
+###
+GET http://localhost:5000/totalprice
+
+###
+GET http://localhost:5000/totalpricetoday
+
+###
+GET http://localhost:5000/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsIm5hbWFQZW5nZ3VuYSI6InNhdHJpYXN5YW1tIiwiaWF0IjoxNjY3MTQ4OTcyLCJleHAiOjE2NjcxNDg5ODd9.fAVku-8KkiZFQc57qFze7J7D-mhz1CotkMNrV06Wa1E
+###
+GET http://localhost:5000/user/2
+
+###
+POST http://localhost:5000/user
+Content-Type: application/json
+
+{
+    "namaToko" : "Cahya Abadi",
+    "alamatToko" : "Pogung Kidul, Sinduadi, Mlati, Sleman, DI Yogyakarta",
+    "namaPengguna" : "cahyahu",
+    "sandi" : "hadidsuka",
+    "email" : "hadidsukacahya@gmail.com",
+    "telp" : "087802558582",
+    "img": null
+}
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "user" : "satriasyamm",
+    "pwd" : "cobalogin"
+}
+
+###
+GET http://localhost:5000/token
+
+###
+DELETE http://localhost:5000/logout
