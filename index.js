@@ -19,4 +19,6 @@ app.use(
 app.use(express.json());
 app.use(Route);
 
-app.listen(5000, () => console.log("Server up and running..."));
+app.listen(process.env.PORT || 5000, () =>
+  console.log("Server up and running...")
+);
