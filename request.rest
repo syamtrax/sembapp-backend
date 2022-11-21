@@ -1,4 +1,4 @@
-GET https://sembappcoba2.azurewebsites.net/user
+GET https://sembapps.herokuapp.com/user
 ###
 GET http://localhost:5000/transaction/1
 
@@ -66,7 +66,7 @@ Content-Type: application/json
     "img": null
 }
 ###
-POST http://localhost:5000/login
+POST https://sembapps.herokuapp.com/login
 Content-Type: application/json
 
 {
