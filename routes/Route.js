@@ -40,10 +40,10 @@ const router = express.Router();
 router.get("/transaction", verifyToken, getTransaction);
 router.get("/transaction/:id", verifyToken, getTransactionByID);
 router.post("/transaction", verifyToken, createTransaction);
-router.patch("/transaction/:id", verifyToken, updateTransaction);
-router.delete("/transaction/:id",verifyToken, deleteTransaction);
-router.get("/total",verifyToken, totalTransaction);
-router.get("/totalprice", verifyToken,sumTransaction);
+router.patch("/transaction/:id", updateTransaction);
+router.delete("/transaction/:id", deleteTransaction);
+router.get("/total", totalTransaction);
+router.get("/totalprice", sumTransaction);
 
 router.get("/user", verifyToken, getUser);
 router.post("/user", Register);
