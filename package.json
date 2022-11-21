@@ -8,10 +8,7 @@
     "node": "16.x"
   },
   "scripts": {
-    "start": "node index.js",
-    "build": "ng build",
-    "heroku-postbuild": "ng build --prod"
-
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
