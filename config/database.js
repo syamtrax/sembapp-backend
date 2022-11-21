@@ -12,6 +12,7 @@ const db = new Sequelize("newsembapp", "syamtrax", "Cobalogin123", {
   dialectOptions: {
     connectTimeout: 60000,
   },
+  logging: false,
 });
 
 db.authenticate()
