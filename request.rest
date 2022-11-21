@@ -53,7 +53,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsIm5hb
 GET http://localhost:5000/user/2
 
 ###
-POST https://sembapps.herokuapp.com
+POST https://sembapps.herokuapp.com/user
 Content-Type: application/json
 
 {
