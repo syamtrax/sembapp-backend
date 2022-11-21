@@ -49,7 +49,7 @@ router.get("/user", verifyToken, getUser);
 router.post("/user", Register);
 
 router.post("/login", Login);
-router.get("/token", verifyToken, refreshToken);
+router.get("/token", refreshToken);
 router.delete("/logout", Logout);
 
 router.get("/produk", getProduct);
