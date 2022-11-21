@@ -130,11 +130,11 @@ export const Login = async (req, res) => {
         },
       }
     );
-    res.json("refreshToken", refreshToken, {
+    /*res.json("refreshToken", refreshToken, {
       httpOnly: true,
       maxAge: 24 * 60 * 60 * 1000,
       secure: false,
-    });
+    });*/
     res.json({ accessToken: accessToken, refreshToken: refreshToken })
   } catch (error) {
     res.status(400).json({ msg: "Pengguna tidak ditemukan" });
