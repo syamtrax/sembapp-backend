@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 
 const db = new Sequelize("sembapp_db", "root", "", {
-  host: "localhost",
+  host: "sembapp.database.windows.net",
   dialect: "mysql",
 });
 
