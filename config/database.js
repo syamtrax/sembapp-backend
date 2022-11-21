@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 
-const db = new Sequelize("newsembapp", "syamtrax", "Cobalogin123", {
-  host: "sembappdbcoba.mysql.database.azure.com",
+const db = new Sequelize("sembapp_db", "satriasyamm", "Semogasukses123", {
+  host: "sembappdb.mysql.database.azure.com",
   dialect: "mysql",
   port: 3306,
   pool: {
