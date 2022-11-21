@@ -13,10 +13,10 @@ Content-Type: application/json
     "label" : "Berhasil",
     "idtrans" : "IDTrans04_24102022",
     "paymenttype" : "QRIS",
-    "price" : 10000,
+    "price" : 1000000,
     "date" : "2022-10-24",
     "member" : "Member",
-    "namaPengguna" : "ryannoviano"
+    "namaPengguna" : "satriasyamm"
 
 }
 

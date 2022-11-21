@@ -14,6 +14,15 @@ export const getUser = async (req, res) => {
   }
 };
 
+/**Buat data user */
+export const createUser = async (req, res) => {
+  try {
+    await User.create(req.body);
+    res.status(201).json({ msg: "User Created" });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
 
 /**update data user */
 export const updateUser = async (req, res) => {
@@ -29,11 +38,35 @@ export const updateUser = async (req, res) => {
   }
 };
 
+/**delete data user berdasarkan ID */
+export const deleteUser = async (req, res) => {
+  try {
+    await User.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.status(200).json({ msg: "User Deleted" });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
 export const Register = async (req, res) => {
-    
-  const { namaToko, alamatToko, namaPengguna, sandi, confSandi, email, telp, img } =
-    req.body;
-    if(sandi !== confSandi) return res.status(400).json({msg: "Password dan Confirm Password tidak cocok"});
+  const {
+    namaToko,
+    alamatToko,
+    namaPengguna,
+    sandi,
+    confSandi,
+    email,
+    telp,
+    img,
+  } = req.body;
+  if (sandi !== confSandi)
+    return res
+      .status(400)
+      .json({ msg: "Kata Sandi dan Konfirmasi Kata Sandi tidak cocok" });
   const salt = await bcrypt.genSalt();
   const available = await User.findAll({
     where: {

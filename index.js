@@ -12,13 +12,11 @@ app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    //origin: "http://localhost:3000",
+    origin: "http://localhost:3000",
     optionsSuccessStatus: 200,
   })
 );
 app.use(express.json());
 app.use(Route);
 
-app.listen(process.env.PORT || 5000, () =>
-  console.log("Server up and running...")
-);
+app.listen(5000, () => console.log("Server up and running..."));
