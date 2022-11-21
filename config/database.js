@@ -9,6 +9,9 @@ const db = new Sequelize("newsembapp", "syamtrax", "Cobalogin123", {
     min: 0,
     idle: 10000,
   },
+  dialectOptions: {
+    timeout: 42,
+  },
 });
 
 export default db;
