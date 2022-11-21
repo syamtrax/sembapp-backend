@@ -10,7 +10,7 @@ const db = new Sequelize("newsembapp", "syamtrax", "Cobalogin123", {
     idle: 10000,
   },
   dialectOptions: {
-    timeout: 42,
+    connectTimeout: 60000,
   },
 });
 
