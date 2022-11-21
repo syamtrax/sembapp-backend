@@ -135,7 +135,6 @@ export const Login = async (req, res) => {
       maxAge: 24 * 60 * 60 * 1000,
       secure: false,
     });
-    res.json({ accessToken });
   } catch (error) {
     res.status(400).json({ msg: "Pengguna tidak ditemukan" });
   }

@@ -1,6 +1,6 @@
 GET https://sembapps.herokuapp.com/user
 ###
-GET http://localhost:5000/transaction/1
+GET https://sembapps.herokuapp.com/transaction
 
 ###
 GET http://localhost:5000/dokumen
@@ -71,11 +71,11 @@ Content-Type: application/json
 
 {
     "user" : "satriasyamm",
-    "pwd" : "cobalogin"
+    "pwd" : "Syamtrax12i"
 }
 
 ###
-GET http://localhost:5000/token
+GET https://sembapps.herokuapp.com/token
 
 ###
-DELETE http://localhost:5000/logout
+DELETE https://sembapps.herokuapp.com/logout

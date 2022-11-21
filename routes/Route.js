@@ -37,13 +37,13 @@ import {
 
 const router = express.Router();
 
-router.get("/transaction", getTransaction);
-router.get("/transaction/:id", getTransactionByID);
-router.post("/transaction", createTransaction);
-router.patch("/transaction/:id", updateTransaction);
-router.delete("/transaction/:id", deleteTransaction);
-router.get("/total", totalTransaction);
-router.get("/totalprice", sumTransaction);
+router.get("/transaction", verifyToken, getTransaction);
+router.get("/transaction/:id", verifyToken, getTransactionByID);
+router.post("/transaction", verifyToken, createTransaction);
+router.patch("/transaction/:id", verifyToken, updateTransaction);
+router.delete("/transaction/:id",verifyToken, deleteTransaction);
+router.get("/total",verifyToken, totalTransaction);
+router.get("/totalprice", verifyToken,sumTransaction);
 
 router.get("/user", verifyToken, getUser);
 router.post("/user", Register);
@@ -52,16 +52,16 @@ router.post("/login", Login);
 router.get("/token", refreshToken);
 router.delete("/logout", Logout);
 
-router.get("/produk", getProduct);
-router.get("/produk/:kodeProduk", getProductByID);
-router.post("/produk", createProduct);
-router.patch("/produk/:kodeProduk", updateProduct);
-router.delete("/produk/:kodeProduk", deleteProduct);
+router.get("/produk",verifyToken, getProduct);
+router.get("/produk/:kodeProduk",verifyToken, getProductByID);
+router.post("/produk",verifyToken, createProduct);
+router.patch("/produk/:kodeProduk", verifyToken,updateProduct);
+router.delete("/produk/:kodeProduk", verifyToken,deleteProduct);
 
-router.get("/dokumen", getDocument);
-router.get("/dokumen/:id", getDocumentByID);
-router.post("/dokumen", createDocument);
-router.patch("/dokumen/:id", updateDocument);
-router.delete("/dokumen/:id", deleteDocument);
+router.get("/dokumen",verifyToken, getDocument);
+router.get("/dokumen/:id", verifyToken,getDocumentByID);
+router.post("/dokumen", verifyToken,createDocument);
+router.patch("/dokumen/:id",verifyToken, updateDocument);
+router.delete("/dokumen/:id",verifyToken, deleteDocument);
 
 export default router;
