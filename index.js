@@ -12,11 +12,13 @@ app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: "http://localhost:3000",
+    origin: "https://deploy--cool-cupcake-3c4abf.netlify.app/",
     optionsSuccessStatus: 200,
   })
 );
 app.use(express.json());
 app.use(Route);
 
-app.listen(process.env.PORT || 5000, () => console.log("Server up and running..."));
+app.listen(process.env.PORT || 5000, () =>
+  console.log("Server up and running...")
+);
