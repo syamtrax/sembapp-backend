@@ -1,12 +1,12 @@
 GET https://sembapps.herokuapp.com/user
 ###
-GET https://sembapps.herokuapp.com/transaction
+GET https://sembapp.azurewebsites.net/transaction
 
 ###
 GET http://localhost:5000/dokumen
 
 ###
-POST https://sembapps.herokuapp.com/transaction
+POST https://sembapp.azurewebsites.net/transaction
 Content-Type: application/json
 
 {
@@ -16,8 +16,7 @@ Content-Type: application/json
     "price" : 1000000,
     "date" : "2022-10-24",
     "member" : "Member",
-    "namaPengguna" : "satriasyamm"
-
+    "namaPengguna" : "Davin"
 }
 
 ###
@@ -66,16 +65,19 @@ Content-Type: application/json
     "img": null
 }
 ###
-POST https://sembapps.herokuapp.com/login
+POST https://sembapp.azurewebsites.net/login
 Content-Type: application/json
 
 {
     "user" : "satriasyamm",
-    "pwd" : "Syamtrax12i"
+    "pwd" : "satriasyamm"
 }
 
 ###
 GET https://sembapps.herokuapp.com/token
 
 ###
-DELETE https://sembapps.herokuapp.com/logout
+DELETE https://sembapp.azurewebsites.net/logout
+
+###
+GET https://sembapp.azurewebsites.net/token

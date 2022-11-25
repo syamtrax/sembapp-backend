@@ -12,7 +12,7 @@ app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: "https://deploy--cool-cupcake-3c4abf.netlify.app/",
+    origin: "https://sembapps.netlify.app",
     optionsSuccessStatus: 200,
   })
 );

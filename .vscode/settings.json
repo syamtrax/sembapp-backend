@@ -1,0 +1,5 @@
+{
+  "appService.zipIgnorePattern": ["node_modules{,/**}", ".vscode{,/**}"],
+  "appService.defaultWebAppToDeploy": "/subscriptions/96be8b0f-03c7-4c8a-a8e8-f7f8bfb6eef0/AppServices/subscriptions/96be8b0f-03c7-4c8a-a8e8-f7f8bfb6eef0/resourceGroups/sembapp/providers/Microsoft.Web/sites/sembapp",
+  "appService.deploySubpath": "."
+}

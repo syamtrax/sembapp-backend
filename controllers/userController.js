@@ -66,7 +66,7 @@ export const Register = async (req, res) => {
   if (sandi !== confSandi)
     return res
       .status(400)
-      .json({ msg: "Kata Sandi dan Konfirmasi Kata Sandi tidak cocok" });
+      .json({ msg: "Password dan Confirm Password tidak cocok" });
   const salt = await bcrypt.genSalt();
   const available = await User.findAll({
     where: {
@@ -123,30 +123,32 @@ export const Login = async (req, res) => {
       }
     );
     await User.update(
-      { refresh_token: refreshToken },
+      { refresh_token: accessToken },
       {
         where: {
           id: userId,
         },
       }
     );
-    res.cookie("refreshToken", refreshToken, {
+    /*res.cookie("refreshToken", refreshToken, {
       httpOnly: true,
       maxAge: 24 * 60 * 60 * 1000,
       secure: false,
-    });
-    res.json({ accessToken: accessToken, refreshToken: refreshToken });
+    });*/
+    res.send({ accessToken: accessToken });
   } catch (error) {
     res.status(400).json({ msg: "Pengguna tidak ditemukan" });
   }
 };
 
 export const Logout = async (req, res) => {
-  const refreshToken = req.cookies.refreshToken;
-  if (!refreshToken) return res.sendStatus(401);
+  const authHeader = req.headers.authorization; //["authorization"];
+  const accessToken = authHeader && authHeader.split(" ")[1];
+  //const refreshToken = req.cookies.refreshToken;
+  if (!accessToken) return res.sendStatus(401).console.log(accessToken);
   const user = await User.findAll({
     where: {
-      refresh_token: refreshToken,
+      refresh_token: accessToken,
     },
   });
   if (!user[0]) return res.sendStatus(204);
@@ -159,6 +161,6 @@ export const Logout = async (req, res) => {
       },
     }
   );
-  res.clearCookie("refreshToken");
+  //res.clearCookie("refreshToken");
   return res.sendStatus(200);
 };

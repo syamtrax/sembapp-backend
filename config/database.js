@@ -1,18 +1,9 @@
 import { Sequelize } from "sequelize";
 
-const db = new Sequelize("sembapp_db", "satriasyamm", "Semogasukses123", {
-  host: "sembappdb.mysql.database.azure.com",
+const db = new Sequelize("railway", "root", "sLFW3aNv8bnSX9324CKo", {
+  host: "containers-us-west-54.railway.app",
   dialect: "mysql",
-  port: 3306,
-  pool: {
-    max: 10,
-    min: 0,
-    idle: 10000,
-  },
-  dialectOptions: {
-    connectTimeout: 60000,
-  },
-  logging: false,
+  port: 5987,
 });
 
 db.authenticate()
