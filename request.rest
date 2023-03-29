@@ -10,13 +10,26 @@ POST https://sembapp.azurewebsites.net/transaction
 Content-Type: application/json
 
 {
-    "label" : "Berhasil",
-    "idtrans" : "IDTrans04_24102022",
+    "label" : "Hutang",
+    "idtrans" : "IDTrans01_8122022",
+    "paymenttype" : "QRIS",
+    "price" : 4000000,
+    "date" : "2022-12-8",
+    "member" : "Member",
+    "namaPengguna" : "satriasyamm"
+}
+###
+POST http://localhost:5000/transaction
+Content-Type: application/json
+
+{
+    "label" : "Belum Lunas",
+    "idtrans" : "IDTrans06_24102022",
     "paymenttype" : "QRIS",
     "price" : 1000000,
-    "date" : "2022-10-24",
+    "date" : "2022-10-25",
     "member" : "Member",
-    "namaPengguna" : "Davin"
+    "namaPengguna" : "satriasyamm"
 }
 
 ###
